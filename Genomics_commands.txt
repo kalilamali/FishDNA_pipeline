@@ -22,5 +22,18 @@ wget ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRRXXX
 # If error try this
 /services/tools/sratoolkit/2.10.0/bin/fastq-dump --split-3 SRRXXXXXXX.sra.1
 
+# Look at the quality of the reads
+/services/tools/fastqc/0.11.8/fastqc SRRXXXXXXX_1.fastq
+/services/tools/fastqc/0.11.8/fastqc SRRXXXXXXX_2.fastq
+
+# Dowload all .html files to local computer
+scp gstud01@10.44.152.8:~/Project/*.html .
+# Dowload .html file one-by-one to local computer
+scp gstud01@10.44.152.8:~/Project/SRRXXXXXXX_1_fastqc.html ~/Desktop/Genomic_methods/Project/SRRXXXXXXX_1_fastqc.html
+scp gstud01@10.44.152.8:~/Project/SRRXXXXXXX_1_fastqc.html ~/Desktop/Genomic_methods/Project/SRRXXXXXXX_1_fastqc.html
+
+# Trimming
+# TODO
+
 # Find SNPs
 # TODO
